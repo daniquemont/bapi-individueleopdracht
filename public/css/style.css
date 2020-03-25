@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+
+html
+{
+    background-color: #586F7C;
+}
+
+h1, h2{
+    font-family: 'Open Sans', sans-serif ;
+    color: white;
+    letter-spacing: 0.1em;
+}
+
+.grid-container
+{
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+}
+
+
+
