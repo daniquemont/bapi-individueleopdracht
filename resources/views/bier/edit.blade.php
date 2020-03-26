@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form class="" action="/update/{{ $bier->naam}}" method="PATCH">
+    <form class="" action="/update/{{ $bier->naam}}" method="post">
         {{method_field('PATCH')}}
         {{ csrf_field()}}
 
