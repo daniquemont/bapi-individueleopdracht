@@ -20,6 +20,8 @@ class CreateBierTable extends Migration
             $table->integer('kleur_EBC');
             $table->integer('bitter_EBU');
             $table->string('biersoort')->references('naam')->on('biersoort');
+            $table->string('foto');
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

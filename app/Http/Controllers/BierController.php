@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class BierController extends Controller
 {
+    public function error(){
+        return view('bier.404');
+    }
+    
     public function index(){
         return view('bier.index')->with('bieren',Bier::all());
     }
@@ -76,6 +80,12 @@ class BierController extends Controller
         catch(Excpection $e){
             return redirect('/update/{bierNaam}');
         }
+
+    }
+
+    public function delete(Request $request, $bierNaam){
+        Bier::where('naam', '=', $bierNaam)->delete();
+        return redirect('/bier');
     }
 
     /*public function create()

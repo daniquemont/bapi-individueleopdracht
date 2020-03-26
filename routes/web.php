@@ -37,7 +37,6 @@ Route::get('/biersoort', 'BiersoortController@index');
 
 Route::get('/biersoort/{biersoort}', 'BiersoortController@show');
 
-
 Route::post('/bieren', 'BierController@store');
 
 Route::get('/create', 'BierController@create');
@@ -46,11 +45,12 @@ Route::get('/update/{bierNaam}', 'BierController@edit');
 
 Route::patch('/update/{bierNaam}', 'BierController@update');
 
+Route::get('/delete/{bierNaam}', 'BierController@delete');
 
 
 
 
 
-Route::any('{query}', function() 
-{ return redirect('/bier'); })->where('query', '.*');
+// Route::any('{query}', function() 
+// { return redirect('/bier'); })->where('query', '.*');
 

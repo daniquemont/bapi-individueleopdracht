@@ -11,6 +11,7 @@
         <input type="number" name="kleur_EBC" value="">
         <input type="number" name="bitter_EBU" value="">
         <input type="text" name="biersoort" value="">
+        <input type="text" name="foto" value="">
         <button type="submit" name="button">Let's go</button>
     </form>
 @endsection
