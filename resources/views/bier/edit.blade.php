@@ -3,7 +3,7 @@
 @section('content')
 
     <form class="" action="/update/{{ $bier->naam}}" method="PATCH">
-        {{method_field('POST')}}
+        {{method_field('PATCH')}}
         {{ csrf_field()}}
 
         <input type="text" name="naam" value="{{ $bier->naam }}">
