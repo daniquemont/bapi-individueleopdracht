@@ -44,7 +44,7 @@ Route::get('/create', 'BierController@create');
 
 Route::get('/update/{bierNaam}', 'BierController@edit');
 
-Route::put('/editbieren', 'BierController@update');
+Route::patch('/update/{bierNaam}', 'BierController@update');
 
 
 

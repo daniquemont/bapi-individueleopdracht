@@ -43,7 +43,7 @@ class BierController extends Controller
             return redirect('/bier');
         }
         catch(Excpection $e){
-            return rederict('/bier/create');
+            return redirect('/bier/create');
         }
     }
 
@@ -53,23 +53,29 @@ class BierController extends Controller
     }
 
     public function update(Request $request, $bierNaam){
-        $request->validate([
-            'naam' => 'required',
-            'merk' => 'required',
-            'alcoholpercentage' => 'required',
-            'kleur_EBC' => 'required',
-            'bitter_EBU' => 'required',
-            'biersoort' => 'required',
-        ]);
-        $bier = Bier::find($bierNaam);
-        $bier->naam = $request->get('naam');
-        $bier->merk = $request->get('merk');
-        $bier->alcoholpercentage = $request->get('alcoholpercentage');
-        $bier->kleur_EBC = $request->get('kleur_EBC');
-        $bier->bitter_EBU = $request->get('bitter_EBU');
-        $bier->biersoort = $request->get('biersoort');
-        $bier->save();
-        return rederict('/bier');
+        $bier = Bier::where('naam', '=', $bierNaam)->get();
+        $bier->naam = $request->input('naam');
+        $bier->merk = $request->input('merk');
+        $bier->alcoholpercentage = $request->input('alcoholpercentage');
+        $bier->kleur_EBC = $request->input('kleur_EBC');
+        $bier->bitter_EBU = $request->input('bitter_EBU');
+        $bier->biersoort = $request->input('biersoort');
+
+        try{
+           Bier::where('naam', '=', $bierNaam)
+           ->update([
+                'naam' => $request->input('naam'),
+                'merk' => $request->input('merk'),
+                'alcoholpercentage' => $request->input('alcoholpercentage'),
+                'kleur_EBC' => $request->input('kleur_EBC'),
+                'bitter_EBU' => $request->input('bitter_EBU'),
+                'biersoort' => $request->input('biersoort'),
+           ]);
+           return redirect('/bier');
+        }
+        catch(Excpection $e){
+            return redirect('/update/{bierNaam}');
+        }
     }
 
     /*public function create()

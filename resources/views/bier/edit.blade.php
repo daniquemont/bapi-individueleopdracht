@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <form class="" action="/editbieren" method="post">
-        @csrf
-        @method('PUT')
+    <form class="" action="/update/{{ $bier->naam}}" method="post">
+        {{method_field('PATCH')}}
+        {{ csrf_field()}}
 
         <input type="text" name="naam" value="{{ $bier->naam }}">
         <input type="text" name="merk" value="{{ $bier->merk }}">

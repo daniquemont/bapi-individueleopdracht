@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Bier extends Model
 {
     protected $table='bier';
+    protected $primaryKey = 'naam';
     public $timestamps = false;
     public $incrementing = false;
 
