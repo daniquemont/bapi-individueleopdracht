@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form class="" action="/update/{{ $bier->naam}}" method="post">
+    <form id="js--editForm" action="/update/{{ $bier->naam}}" method="POST">
         {{method_field('PATCH')}}
         {{ csrf_field()}}
 
@@ -13,7 +13,7 @@
         <input type="number" name="bitter_EBU" value="{{ $bier->bitter_EBU }}">
         <input type="text" name="biersoort" value="{{ $bier->biersoort }}">
         <button type="submit" name="action" name="update" formaction="/update/{{ $bier->naam}}">Update</button>
-        <button type="submit" name="action" name="delete" formaction="/delete/{{ $bier->naam}}">Delete</button>
+        <button type="submit" id="js--delete" name="action" name="delete" formaction="/delete/{{ $bier->naam}}">Delete</button>
     </form>
 @endsection
 

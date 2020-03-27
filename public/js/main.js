@@ -1,4 +1,4 @@
-// window.onload = () => {
+window.onload = () => {
 
 //     const BASE_URL = "http://127.0.0.1:8000/";
 //     const SUB_URLS = ["bier/", "gisting/", "bier/Hoegaarden wit/", "bier/Hoegaarden wit/biersoort/", "gisting/Lage gisting/biersoorten/"];
@@ -15,6 +15,14 @@
 //         }
 //     };
 //     getData(SUB_URLS);
-// }
+
+    const deleteButton = document.getElementById('js--delete');
+    const editForm = document.getElementById('js--editForm');
+    
+    deleteButton.onclick = () => {
+        editForm.setAttribute("method", "PUT")
+    }
+
+}
 
 //http://127.0.0.1:8000/bier/Hoegaarden%20wit/biersoort
